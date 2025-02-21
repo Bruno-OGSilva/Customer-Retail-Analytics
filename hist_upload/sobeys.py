@@ -59,6 +59,17 @@ def load_csv_files(directory: str) -> pd.DataFrame:
         )  # Ensure all values are strings
         df["Time"] = promo_date
 
+        # Extract store_id from Geography
+        df["store_id"] = df["Geography"].str.extract(r"Store (\d+)", expand=False)
+
+        # Create unique_id by concatenating sobeys, UPC No, store_id, and Time with | separator
+        df["unique_id"] = (
+            "sobeys|" + df["UPC No"] + "|" + df["store_id"] + "|" + df["Time"]
+        )
+
+        # Add current timestamp to timestamp column
+        df["timestamp"] = pd.to_datetime("now")
+
         # Remove any repeated headers appearing within the data
         df = df[df["Geography"] != "Geography"]
 
@@ -80,6 +91,9 @@ def create_table_if_not_exists(client, dataset_id: str, table_id: str):
         bigquery.SchemaField("Dollar Sales All Sales", "STRING"),
         bigquery.SchemaField("Unit Sales All Sales", "STRING"),
         bigquery.SchemaField("Time", "STRING"),
+        bigquery.SchemaField("store_id", "STRING"),
+        bigquery.SchemaField("unique_id", "STRING"),
+        bigquery.SchemaField("timestamp", "TIMESTAMP"),
     ]
 
     try:
