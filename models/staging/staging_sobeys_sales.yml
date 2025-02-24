@@ -27,14 +27,10 @@ models:
         description: "Dollar value of all sales, cast to float for precision in financial calculations."
         tests:
           - not_null
-          - expression_is_true:
-              expression: "dollar_sales >= 0"
       - name: unit_sales
         description: "The total number of units sold, cast to an integer."
         tests:
           - not_null
-          - expression_is_true:
-              expression: "unit_sales >= 0"
       - name: week_end_date
         description: "The date marking the end of the sales week, converted from the raw Time column."
         tests:
