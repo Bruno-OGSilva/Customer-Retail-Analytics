@@ -137,7 +137,7 @@ if __name__ == "__main__":
     DIRECTORY = "C:/Customer-Retail-Analytics/data/sobeys"
     CREDENTIALS_PATH = "C:/.keys/keyfile.json"
     PROJECT_ID = "soft-drink-grocery"
-    DATASET_ID = "soft_drink"
+    DATASET_ID = "raw"
     TABLE_ID = "sobeys_sales"
 
     try:
