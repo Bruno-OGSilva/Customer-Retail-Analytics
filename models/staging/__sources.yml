@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: pos
+    schema: raw
+    description: POS data extracted from the retail gateways (LDIA, Circana, 1 Screen and Dunnhumby)
+    freshness:
+      warn_after:
+        count: 24
+        period: hour
+      error_after:
+        count: 48
+        period: hour
+    tables:
+      - name: sobeys_sales
+        description: Sobeys dollar and unit sales by week-store-upc

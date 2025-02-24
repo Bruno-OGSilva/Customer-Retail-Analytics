@@ -70,6 +70,9 @@ def load_csv_files(directory: str) -> pd.DataFrame:
         # Add current timestamp to timestamp column
         df["timestamp"] = pd.to_datetime("now")
 
+        # Add the retail group
+        df["retail_group"] = "Sobeys"
+
         # Remove any repeated headers appearing within the data
         df = df[df["Geography"] != "Geography"]
 
@@ -94,6 +97,7 @@ def create_table_if_not_exists(client, dataset_id: str, table_id: str):
         bigquery.SchemaField("store_id", "STRING"),
         bigquery.SchemaField("unique_id", "STRING"),
         bigquery.SchemaField("timestamp", "TIMESTAMP"),
+        bigquery.SchemaField("retail_group", "STRING"),
     ]
 
     try:
