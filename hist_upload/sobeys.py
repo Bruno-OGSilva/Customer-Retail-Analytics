@@ -142,7 +142,7 @@ if __name__ == "__main__":
     CREDENTIALS_PATH = "C:/.keys/keyfile.json"
     PROJECT_ID = "soft-drink-grocery"
     DATASET_ID = "raw"
-    TABLE_ID = "sobeys_sales"
+    TABLE_ID = "raw_sobeys_sales"
 
     try:
         df = load_csv_files(DIRECTORY)
