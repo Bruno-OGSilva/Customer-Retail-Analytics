@@ -34,9 +34,15 @@ models:
     # Config indicated by + and applies to all files under models/example/
     raw:
       +materialized: view
+      +docs:
+        node_color: "#cd7f32"  # Bronze color for the raw layer
     staging:
       +materialized: view
+      +docs:
+        node_color: "#c0c0c0"  # Silver color for the staging layer
     intermidiate:
       +materialized: view
     marts:
-      +materialized: view
+      +materialized: table
+      +docs:
+        node_color: "#e6b530"  # Gold color for the mart layer

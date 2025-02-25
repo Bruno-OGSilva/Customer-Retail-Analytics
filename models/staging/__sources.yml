@@ -12,5 +12,7 @@ sources:
         count: 48
         period: hour
     tables:
-      - name: sobeys_sales
+      - name: raw_sobeys_sales
         description: Sobeys dollar and unit sales by week-store-upc
+      - name: raw_sobeys_stores
+        description: Sobeys sstore dimenstion table
