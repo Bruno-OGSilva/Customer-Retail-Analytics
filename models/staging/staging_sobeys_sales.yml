@@ -13,7 +13,7 @@ models:
       type: view  # Model type (table or view)
       data_source: POS Sobeys  # Model package
       language: sql  # Language used to define the model
-      relation: bigquery.raw.sobeys_sales  # Relação específica no banco de dados
+      relation: bigquery.raw.sobeys_sales
     columns:
       - name: store_name
         description: "Derived from the Geography column; represents the store's name and id."

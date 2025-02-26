@@ -6,6 +6,14 @@ models:
       This model extracts and transforms the raw store data for Sobeys from the POS system.
       It pulls data from the source table `pos.raw_sobeys_stores`, renames columns for clarity,
       and derives a composite unique identifier by concatenating `retail_group` and `Store No`.
+    config:
+      tags: ['dStores'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: view  # Model type (table or view)
+      data_source: POS Calgary   # Model package
+      language: sql  # Language used to define the model
+      relation: bigquery.raw.sobeys_stores
     columns:
       - name: store_name
         description: "Derived from 'Geography'; represents the store's name or location."
