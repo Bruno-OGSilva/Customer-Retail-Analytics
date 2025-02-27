@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: staging_pfg_sales
+    description: >
+      This model extracts and transforms raw PFG sales data from the POS system.
+      It sources data from the `pos.raw_pfg_sales` table and applies transformations
+      such as renaming columns, casting data types, and deriving a unique store identifier.
+      These steps ensure that the data is clean, consistent, and ready for downstream analytics.
+    columns:
+      - name: store_id
+        description: "Derived from the Geography column; serves as the store identifier."
+        tests:
+          - not_null
+      - name: product
+        description: "Represents the product as provided in the raw data."
+        tests:
+          - not_null
+      - name: upc_no
+        description: "The original UPC identifier extracted from the raw data."
+        tests:
+          - not_null
+      - name: upc_int
+        description: "UPC ID cast as an integer to facilitate numerical operations."
+        tests:
+          - not_null
+      - name: dollar_sales
+        description: "Dollar sales value, cast as float64 for precision in financial calculations."
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "dollar_sales >= 0"
+      - name: unit_sales
+        description: "Number of units sold, cast as int64 for consistent unit tracking."
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "unit_sales >= 0"
+      - name: week_end_date
+        description: "Date marking the end of the sales week, converted to DATE type."
+        tests:
+          - not_null
+      - name: retail_group
+        description: "Retail group classification associated with the sales record."
+        tests:
+          - not_null
+      - name: unique_store_id
+        description: >
+          A composite unique identifier created by concatenating `retail_group` and the original
+          Geography value (using a pipe `|` separator). This ensures each record is uniquely store identified.
+        tests:
+          - not_null

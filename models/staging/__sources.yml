@@ -15,8 +15,12 @@ sources:
       - name: raw_sobeys_sales
         description: Sobeys dollar and unit sales by week-store-upc
       - name: raw_sobeys_stores
-        description: Sobeys sstore dimenstion table
+        description: Sobeys sstore dimension table
       - name: raw_ccl_sales
         description: Calgary Coop dollar and unit sales by week-store-upc
       - name: raw_ccl_stores
-        description: Calgary sstore dimenstion table
+        description: Calgary sstore dimension table
+      - name: raw_pfg_sales
+        description: Pattison Food Group dollar and unit sales by week-store-upc
+      - name: raw_pfg_stores
+        description: Pattison Food Group store dimension table
