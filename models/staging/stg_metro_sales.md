@@ -37,6 +37,9 @@ The `stg_metro_sales` model is responsible for extracting, cleaning, and transfo
 ### Derived Field
 - **unique_store_id:**
   A composite unique identifier is created by concatenating `retail_group` and `Store No` with a pipe (`|`) separator. This derived field is essential for ensuring each store record is uniquely identifiable, which simplifies downstream joins and aggregations.
+  - **pod:**
+  Created by concatenating `retail_group`, `Store No` and `UPC ID` with a pipe (`|`) separator. This composite key will be used to calculate the point of ditribtuion KPI.
+
 
 ## Business Logic & Rationale
 - **Standardization:**

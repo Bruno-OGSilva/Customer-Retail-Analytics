@@ -42,6 +42,8 @@ The `stg_ccl_sales` model is responsible for extracting, cleaning, and transform
 ### Derived Field
 - **unique_store_id:**
   Created by concatenating `retail_group` and `Geography` with a pipe (`|`) separator. This composite key uniquely identifies each store record, aiding in accurate joins and aggregations across models.
+- **pod:**
+  Created by concatenating `retail_group`, `Geography` and `UPC ID` with a pipe (`|`) separator. This composite key will be used to calculate the point of ditribtuion KPI.
 
 ## Business Logic & Rationale
 - **Data Consistency:**
@@ -59,7 +61,6 @@ The `stg_ccl_sales` model is responsible for extracting, cleaning, and transform
 - **Recommended Tests:**
   - **Not Null Tests:** Verify that key fields such as `store_id`, `product`, `upc_no`, `upc_int`, `dollar_sales`, `unit_sales`, `week_end_date`, `retail_group`, and `unique_store_id` are not null.
   - **Data Type Validation:** Ensure that `upc_int`, `dollar_sales`, and `unit_sales` are correctly cast to their intended numeric types.
-  - **Uniqueness Test:** Validate that the `unique_store_id` is unique across the dataset.
 
 ## Conclusion
 The `stg_ccl_sales` model plays a crucial role in the data pipeline by transforming raw sales data into a standardized format. This model ensures that the data is clean, correctly typed, and uniquely identified, providing a solid foundation for further analytical processing and business intelligence activities.

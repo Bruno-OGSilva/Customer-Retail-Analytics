@@ -37,6 +37,8 @@ The `stg_fcl_sales` model is designed to extract, clean, and transform raw FCL s
   Cast to a DATE type as `week_end_date` to facilitate time-series analysis.
 - **Unique Store Identifier:**
   A new field, `unique_store_id`, is derived by concatenating `retail_group` and `Store Number` (i.e., `store_id`) with a pipe (`|`) separator. This composite key uniquely identifies each store record.
+- **pod:**
+  Created by concatenating `retail_group`, `Store Number` and `UPC` with a pipe (`|`) separator. This composite key will be used to calculate the point of ditribtuion KPI.
 
 ## Business Logic & Rationale
 - **Data Consistency:**

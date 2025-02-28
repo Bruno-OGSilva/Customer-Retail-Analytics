@@ -32,6 +32,8 @@ The `stg_sobeys_sales` model is responsible for extracting and transforming raw 
 
 ### Derived Fields
 - **unique_store_id:** Created using `CONCAT(retail_group, '|', store_id)`, this field generates a unique identifier for each store by combining the `retail_group` and `store_id`. This facilitates reliable joining and aggregation in downstream models.
+- **pod:**
+  Created by concatenating `retail_group`, `Geography` and `UPC No` with a pipe (`|`) separator. This composite key will be used to calculate the point of ditribtuion KPI.
 
 ## Business Logic & Rationale
 - **Data Consistency:** The transformations ensure that all data types are consistent and accurate, which is critical for analytical operations.

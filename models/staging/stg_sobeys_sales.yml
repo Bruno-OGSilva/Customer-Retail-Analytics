@@ -60,3 +60,7 @@ models:
           - relationships:
               to: ref('stg_sobeys_stores')
               field: unique_store_id
+      - name: pod
+        description: >
+          A composite created by concatenating `retail_group`, the original
+          `Geography` value and `UPC No`. This field is used to calculate the point of distribution KPI.

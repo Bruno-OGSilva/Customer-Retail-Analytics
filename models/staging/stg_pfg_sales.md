@@ -44,6 +44,8 @@ The `stg_pfg_sales` model is responsible for transforming raw PFG sales data fro
 ### Derived Field
 - **unique_store_id:**
   Created by concatenating `retail_group` and the original `Geography` value (using a pipe `|` separator), this composite key uniquely identifies each store record. This is crucial for accurate joins and aggregations in subsequent models.
+  - **pod:**
+  Created by concatenating `retail_group`, `Geography` and `UPC ID` with a pipe (`|`) separator. This composite key will be used to calculate the point of ditribtuion KPI.
 
 ## Business Logic & Rationale
 - **Data Standardization:**

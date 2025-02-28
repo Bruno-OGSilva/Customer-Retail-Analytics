@@ -17,7 +17,8 @@ renamend as (
         CAST(`Week End Date` AS DATE) as week_end_date,
         retail_group,
         `Promotion Type Name` as promo_type,
-        CONCAT(retail_group, '|', `Store Number`) as unique_store_id
+        CONCAT(retail_group, '|', `Store Number`) as unique_store_id,
+        CONCAT(retail_group, '|', `Store Number`, '|', `UPC`) as pod
     from
         source
 

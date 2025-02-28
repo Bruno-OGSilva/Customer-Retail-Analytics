@@ -17,7 +17,8 @@ renamend as (
         CAST(`Time` AS DATE) as week_end_date,
         store_id,
         retail_group,
-        CONCAT(retail_group, '|', store_id) as unique_store_id
+        CONCAT(retail_group, '|', store_id) as unique_store_id,
+        CONCAT(retail_group, '|', store_id, '|', `UPC No`) as pod
     from
         source
 
