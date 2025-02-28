@@ -24,3 +24,7 @@ sources:
         description: Pattison Food Group dollar and unit sales by week-store-upc
       - name: raw_pfg_stores
         description: Pattison Food Group store dimension table
+      - name: raw_lcl_sales
+        description: Loblaw dollar and unit sales by week-store-upc
+      - name: raw_lcl_stores
+        description: Loblaw store dimension table

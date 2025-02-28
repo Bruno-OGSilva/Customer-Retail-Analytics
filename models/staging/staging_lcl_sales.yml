@@ -1,0 +1,71 @@
+version: 2
+
+models:
+  - name: staging_lcl_sales
+    description: >
+      This model extracts, cleans, and transforms raw LCL sales data from the POS system.
+      Data is sourced from the `pos.raw_lcl_sales` table. The model renames columns, cleans
+      currency values, casts data types appropriately, and creates a composite unique store identifier
+      to ensure data integrity for downstream analysis.
+    columns:
+      - name: store_id
+        description: "Store identifier derived from `Site Number`."
+        tests:
+          - not_null
+      - name: product
+        description: "Product description sourced from `UPC_Description`."
+        tests:
+          - not_null
+      - name: upc_no
+        description: "Original UPC number as extracted from `UPC`."
+        tests:
+          - not_null
+      - name: upc_int
+        description: "UPC number cast as an integer to support numerical operations."
+        tests:
+          - not_null
+      - name: dollar_sales
+        description: >
+          Sales amount cleaned by removing currency symbols and commas, then cast to float64
+          for precise financial calculations.
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "dollar_sales >= 0"
+      - name: unit_sales
+        description: >
+          Number of units sold, cast to int64 for consistent unit count tracking.
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "unit_sales >= 0"
+      - name: promo_dollar_sales
+        description: >
+          Promotional sales amount cleaned of currency symbols and commas, cast to float64
+          for accurate financial representation.
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "promo_dollar_sales >= 0"
+      - name: promo_unit_sales
+        description: >
+          Number of promotional units sold, cast to int64 to maintain consistency in unit counts.
+        tests:
+          - not_null
+          - expression_is_true:
+              expression: "promo_unit_sales >= 0"
+      - name: week_end_date
+        description: >
+          End date of the sales week, cast to DATE type to enable proper time-series analysis.
+        tests:
+          - not_null
+      - name: retail_group
+        description: "Retail group associated with the sales record."
+        tests:
+          - not_null
+      - name: unique_store_id
+        description: >
+          Composite unique identifier created by concatenating `retail_group` and `Site Number`
+          with a pipe (`|`) separator. This field is critical for ensuring each store record is uniquely identifiable.
+        tests:
+          - not_null
