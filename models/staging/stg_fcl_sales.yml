@@ -1,12 +1,20 @@
 version: 2
 
 models:
-  - name: staging_fcl_sales
+  - name: stg_fcl_sales
     description: >
       This model extracts and transforms raw FCL sales data from the POS system.
       It sources data from the `pos.raw_fcl_sales` table, renames columns for clarity,
       casts data types to ensure consistency, and creates a composite unique identifier.
       These transformations prepare the data for accurate and efficient downstream analysis.
+    config:
+      tags: ['fSales'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: view  # Model type (table or view)
+      data_source: POS Federated Coop   # Model package
+      language: sql  # Language used to define the model
+      relation: bigquery.raw_fcl_sales
     columns:
       - name: store_id
         description: "Unique store identifier derived from `Store Number`."
@@ -54,3 +62,6 @@ models:
           with a pipe (`|`) separator. This field ensures each store record is uniquely identifiable.
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_fcl_stores')
+              field: unique_store_id

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: staging_sobeys_stores
+  - name: stg_sobeys_stores
     description: >
       This model extracts and transforms the raw store data for Sobeys from the POS system.
       It pulls data from the source table `pos.raw_sobeys_stores`, renames columns for clarity,
@@ -11,7 +11,7 @@ models:
     meta:  # Additional metadata
       owner: Bruno Silva  # Model owner
       type: view  # Model type (table or view)
-      data_source: POS Calgary   # Model package
+      data_source: POS Sobeys   # Model package
       language: sql  # Language used to define the model
       relation: bigquery.raw.sobeys_stores
     columns:
@@ -51,5 +51,5 @@ models:
           - not_null
           - unique
           - relationships:
-              to: ref('staging_sobeys_sales')
+              to: ref('stg_sobeys_sales')
               field: unique_store_id

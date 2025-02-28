@@ -1,12 +1,20 @@
 version: 2
 
 models:
-  - name: staging_fcl_stores
+  - name: stg_fcl_stores
     description: >
       This model extracts and transforms Federated Coop store data from the raw FCL sales dataset.
       It sources data from the `pos.raw_fcl_sales` table, renames columns for clarity,
       assigns a constant banner value, and creates a composite unique identifier. These transformations
       ensure that the store data is standardized and ready for downstream analytics.
+    config:
+      tags: ['dStores'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: view  # Model type (table or view)
+      data_source: POS Federated Coop   # Model package
+      language: sql  # Language used to define the model
+      relation: bigquery.raw.fcl_stores
     columns:
       - name: store_name
         description: "Store name derived from the `Store Name` column."
@@ -35,3 +43,6 @@ models:
           is uniquely identifiable.
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_fcl_sales')
+              field: unique_store_id

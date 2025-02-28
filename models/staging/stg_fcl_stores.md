@@ -1,7 +1,7 @@
-# Staging Model: staging_fcl_stores
+# Staging Model: stg_fcl_stores
 
 ## Overview
-The `staging_fcl_stores` model extracts and transforms store data for Federated Coop from the raw FCL sales dataset. It pulls data from the `pos.raw_fcl_sales` table, applies column renaming, assigns a constant banner value, and generates a composite unique identifier. These transformations standardize the data for reliable downstream processing and analysis.
+The `stg_fcl_stores` model extracts and transforms store data for Federated Coop from the raw FCL sales dataset. It pulls data from the `pos.raw_fcl_sales` table, applies column renaming, assigns a constant banner value, and generates a composite unique identifier. These transformations standardize the data for reliable downstream processing and analysis.
 
 ## Source Data
 - **Source Table:** `pos.raw_fcl_sales`
@@ -44,4 +44,4 @@ The `staging_fcl_stores` model extracts and transforms store data for Federated 
   - **Uniqueness Test:** Verify that `unique_store_id` is unique across all records.
 
 ## Conclusion
-The `staging_fcl_stores` model effectively cleans and standardizes raw Federated Coop store data, setting a robust foundation for downstream reporting and analytics. Its transformations ensure that the data is accurate, consistent, and uniquely identifiable, supporting reliable integration into broader analytical workflows.
+The `stg_fcl_stores` model effectively cleans and standardizes raw Federated Coop store data, setting a robust foundation for downstream reporting and analytics. Its transformations ensure that the data is accurate, consistent, and uniquely identifiable, supporting reliable integration into broader analytical workflows.

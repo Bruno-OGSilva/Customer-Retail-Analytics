@@ -1,12 +1,20 @@
 version: 2
 
 models:
-  - name: staging_lcl_sales
+  - name: stg_lcl_sales
     description: >
       This model extracts, cleans, and transforms raw LCL sales data from the POS system.
       Data is sourced from the `pos.raw_lcl_sales` table. The model renames columns, cleans
       currency values, casts data types appropriately, and creates a composite unique store identifier
       to ensure data integrity for downstream analysis.
+    config:
+      tags: ['fSales'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: view  # Model type (table or view)
+      data_source: POS Loblaw   # Model package
+      language: sql  # Language used to define the model
+      relation: bigquery.raw.lcl_sales
     columns:
       - name: store_id
         description: "Store identifier derived from `Site Number`."
@@ -69,3 +77,6 @@ models:
           with a pipe (`|`) separator. This field is critical for ensuring each store record is uniquely identifiable.
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_lcl_stores')
+              field: unique_store_id

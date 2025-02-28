@@ -1,7 +1,7 @@
-# Staging Model: staging_lcl_stores
+# Staging Model: stg_lcl_stores
 
 ## Overview
-The `staging_lcl_stores` model extracts, cleans, and transforms raw store data from the POS system for LCL. It sources data from the `raw_lcl_stores` table within the `pos` schema, renames key columns to more descriptive names, and derives a composite unique identifier. These transformations ensure that the data is standardized and ready for downstream analytical processing.
+The `stg_lcl_stores` model extracts, cleans, and transforms raw store data from the POS system for LCL. It sources data from the `raw_lcl_stores` table within the `pos` schema, renames key columns to more descriptive names, and derives a composite unique identifier. These transformations ensure that the data is standardized and ready for downstream analytical processing.
 
 ## Source Data
 - **Source Table:** `pos.raw_lcl_stores`
@@ -49,4 +49,4 @@ The `staging_lcl_stores` model extracts, cleans, and transforms raw store data f
   - **Transformation Accuracy:** Validate that the renaming and concatenation operations are correctly applied.
 
 ## Conclusion
-The `staging_lcl_stores` model standardizes raw store data by renaming columns and generating a unique store identifier. This transformation ensures that the dataset is consistent, reliable, and ready for integration into downstream analytical workflows.
+The `stg_lcl_stores` model standardizes raw store data by renaming columns and generating a unique store identifier. This transformation ensures that the dataset is consistent, reliable, and ready for integration into downstream analytical workflows.

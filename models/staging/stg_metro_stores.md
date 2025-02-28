@@ -1,7 +1,7 @@
-# Staging Model: staging_metro_stores
+# Staging Model: stg_metro_stores
 
 ## Overview
-The `staging_metro_stores` model is designed to extract, transform, and standardize raw store data from the POS system for Metro. This model pulls data from the `raw_metro_stores` table in the `pos` schema, renames columns to improve clarity, and generates a composite unique identifier for each store. These transformations ensure the data is consistent and ready for downstream processing and analytics.
+The `stg_metro_stores` model is designed to extract, transform, and standardize raw store data from the POS system for Metro. This model pulls data from the `raw_metro_stores` table in the `pos` schema, renames columns to improve clarity, and generates a composite unique identifier for each store. These transformations ensure the data is consistent and ready for downstream processing and analytics.
 
 ## Source Data
 - **Source Table:** `pos.raw_metro_stores`
@@ -46,4 +46,4 @@ The `staging_metro_stores` model is designed to extract, transform, and standard
   - **Transformation Accuracy:** Validate that the renaming and concatenation operations are performed correctly.
 
 ## Conclusion
-The `staging_metro_stores` model effectively cleans and standardizes raw store data by applying necessary column renaming and generating a unique identifier. This transformation is crucial for ensuring data integrity and consistency, thereby providing a solid foundation for downstream analytics and reporting.
+The `stg_metro_stores` model effectively cleans and standardizes raw store data by applying necessary column renaming and generating a unique identifier. This transformation is crucial for ensuring data integrity and consistency, thereby providing a solid foundation for downstream analytics and reporting.

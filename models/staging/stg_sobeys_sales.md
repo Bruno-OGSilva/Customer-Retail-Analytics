@@ -1,7 +1,7 @@
-# Staging Model: staging_sobeys_sales
+# Staging Model: stg_sobeys_sales
 
 ## Overview
-The `staging_sobeys_sales` model is responsible for extracting and transforming raw POS data for Sobeys. This data originates from CSV files obtained from major Canadian retailer portals. The model cleans and standardizes the data, ensuring that it is correctly formatted for further transformation using dbt core and analysis in Google BigQuery.
+The `stg_sobeys_sales` model is responsible for extracting and transforming raw POS data for Sobeys. This data originates from CSV files obtained from major Canadian retailer portals. The model cleans and standardizes the data, ensuring that it is correctly formatted for further transformation using dbt core and analysis in Google BigQuery.
 
 ## Source Data
 - **Source Table:** `source`
@@ -50,4 +50,4 @@ The `staging_sobeys_sales` model is responsible for extracting and transforming 
 - **Data Integrity:** Employ dbt tests to check for nulls, data type mismatches, and other potential quality issues.
 
 ## Conclusion
-The `staging_sobeys_sales` model is a critical first step in transforming raw POS data into a reliable, analyzable format. By applying necessary renaming, data type conversions, and deriving new fields, this model ensures that downstream analyses and business reporting are built on a foundation of clean and consistent data.
+The `stg_sobeys_sales` model is a critical first step in transforming raw POS data into a reliable, analyzable format. By applying necessary renaming, data type conversions, and deriving new fields, this model ensures that downstream analyses and business reporting are built on a foundation of clean and consistent data.

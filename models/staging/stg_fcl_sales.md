@@ -1,7 +1,7 @@
-# Staging Model: staging_fcl_sales
+# Staging Model: stg_fcl_sales
 
 ## Overview
-The `staging_fcl_sales` model is designed to extract, clean, and transform raw FCL sales data from the POS system. Sourced from the `pos.raw_fcl_sales` table, this model renames columns, casts data types, and creates derived fields to ensure the data is standardized and ready for downstream analytical processing.
+The `stg_fcl_sales` model is designed to extract, clean, and transform raw FCL sales data from the POS system. Sourced from the `pos.raw_fcl_sales` table, this model renames columns, casts data types, and creates derived fields to ensure the data is standardized and ready for downstream analytical processing.
 
 ## Source Data
 - **Source Table:** `pos.raw_fcl_sales`
@@ -57,4 +57,4 @@ The `staging_fcl_sales` model is designed to extract, clean, and transform raw F
   - **Uniqueness Test:** Verify that the `unique_store_id` is unique across all records to prevent duplication.
 
 ## Conclusion
-The `staging_fcl_sales` model cleans and standardizes raw FCL sales data by applying a series of transformations including renaming, type casting, and unique identifier creation. This process ensures that the data is reliable and well-structured, providing a strong foundation for downstream reporting and business intelligence.
+The `stg_fcl_sales` model cleans and standardizes raw FCL sales data by applying a series of transformations including renaming, type casting, and unique identifier creation. This process ensures that the data is reliable and well-structured, providing a strong foundation for downstream reporting and business intelligence.

@@ -1,7 +1,7 @@
-# Staging Model: staging_sobeys_stores
+# Staging Model: stg_sobeys_stores
 
 ## Overview
-The `staging_sobeys_stores` model is designed to extract and transform raw store data for Sobeys from the POS system. It pulls data from the `raw_sobeys_stores` source in the `pos` schema, standardizes column names, and derives a unique store identifier. This cleaned data serves as the foundation for downstream analytics and reporting in your data warehouse.
+The `stg_sobeys_stores` model is designed to extract and transform raw store data for Sobeys from the POS system. It pulls data from the `raw_sobeys_stores` source in the `pos` schema, standardizes column names, and derives a unique store identifier. This cleaned data serves as the foundation for downstream analytics and reporting in your data warehouse.
 
 ## Source Data
 - **Source Table:** `pos.raw_sobeys_stores`
@@ -40,4 +40,4 @@ The `staging_sobeys_stores` model is designed to extract and transform raw store
   - Uniqueness of `unique_store_id` to prevent duplicate store records.
 
 ## Conclusion
-The `staging_sobeys_stores` model is a crucial component of your data pipeline. By standardizing and enhancing the raw store data, this model lays a strong foundation for accurate, efficient downstream analyses in your data warehouse environment.
+The `stg_sobeys_stores` model is a crucial component of your data pipeline. By standardizing and enhancing the raw store data, this model lays a strong foundation for accurate, efficient downstream analyses in your data warehouse environment.

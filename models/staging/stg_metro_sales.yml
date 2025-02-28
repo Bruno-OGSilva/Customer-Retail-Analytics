@@ -1,12 +1,20 @@
 version: 2
 
 models:
-  - name: staging_metro_sales
+  - name: stg_metro_sales
     description: >
       This model extracts and transforms raw Metro sales data from the POS system.
       It sources data from the `pos.raw_metro_sales` table, renames columns for clarity,
       casts numeric fields appropriately, parses the week end date, and creates a composite
       unique identifier for each store to ensure data integrity for downstream analysis.
+    config:
+      tags: ['fSales'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: view  # Model type (table or view)
+      data_source: POS Metro   # Model package
+      language: sql  # Language used to define the model
+      relation: bigquery.raw.metro_sales
     columns:
       - name: store_id
         description: "Unique store identifier derived from the `Store No` column."
@@ -50,3 +58,6 @@ models:
           (i.e., store_id) with a pipe (`|`) separator. This field ensures each store record is uniquely identifiable.
         tests:
           - not_null
+          - relationships:
+              to: ref('stg_metro_stores')
+              field: unique_store_id

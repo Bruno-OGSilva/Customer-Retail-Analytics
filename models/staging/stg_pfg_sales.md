@@ -1,7 +1,7 @@
-# Staging Model: staging_pfg_sales
+# Staging Model: stg_pfg_sales
 
 ## Overview
-The `staging_pfg_sales` model is responsible for transforming raw PFG sales data from the POS system. It extracts data from the `raw_pfg_sales` source in the `pos` schema, applies necessary transformations such as renaming columns, casting data types, and deriving unique identifiers. This prepares the data for reliable downstream processing and analysis.
+The `stg_pfg_sales` model is responsible for transforming raw PFG sales data from the POS system. It extracts data from the `raw_pfg_sales` source in the `pos` schema, applies necessary transformations such as renaming columns, casting data types, and deriving unique identifiers. This prepares the data for reliable downstream processing and analysis.
 
 ## Source Data
 - **Source Table:** `pos.raw_pfg_sales`
@@ -63,4 +63,4 @@ The `staging_pfg_sales` model is responsible for transforming raw PFG sales data
   - Verify that the `unique_store_id` is indeed unique across all records.
 
 ## Conclusion
-The `staging_pfg_sales` model is a critical step in the data pipeline, transforming raw POS data into a structured, consistent format. These transformations support accurate and efficient downstream analysis, enabling robust business insights and decision-making.
+The `stg_pfg_sales` model is a critical step in the data pipeline, transforming raw POS data into a structured, consistent format. These transformations support accurate and efficient downstream analysis, enabling robust business insights and decision-making.

@@ -1,7 +1,7 @@
-# Staging Model: staging_lcl_sales
+# Staging Model: stg_lcl_sales
 
 ## Overview
-The `staging_lcl_sales` model is designed to extract, clean, and transform raw LCL sales data from the POS system. Data is sourced from the `raw_lcl_sales` table in the `pos` schema. This model performs several key transformations including renaming columns, cleaning currency-formatted values, casting data types, and generating a composite unique identifier. These steps ensure the data is consistent and ready for downstream analytics.
+The `stg_lcl_sales` model is designed to extract, clean, and transform raw LCL sales data from the POS system. Data is sourced from the `raw_lcl_sales` table in the `pos` schema. This model performs several key transformations including renaming columns, cleaning currency-formatted values, casting data types, and generating a composite unique identifier. These steps ensure the data is consistent and ready for downstream analytics.
 
 ## Source Data
 - **Source Table:** `pos.raw_lcl_sales`
@@ -59,4 +59,4 @@ The `staging_lcl_sales` model is designed to extract, clean, and transform raw L
   - **Uniqueness Test:** Validate that `unique_store_id` is unique across all stores to prevent duplicate entries.
 
 ## Conclusion
-The `staging_lcl_sales` model effectively transforms raw LCL sales data into a structured and analyzable format. By cleaning currency values, standardizing data types, and generating unique identifiers, this model ensures that the data is accurate and ready for reliable downstream analytics and business intelligence.
+The `stg_lcl_sales` model effectively transforms raw LCL sales data into a structured and analyzable format. By cleaning currency values, standardizing data types, and generating unique identifiers, this model ensures that the data is accurate and ready for reliable downstream analytics and business intelligence.

@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: staging_sobeys_sales
+  - name: stg_sobeys_sales
     description: >
       This model extracts and transforms the raw POS data for Sobeys from CSV files. It
       renames columns, casts data types for consistency, and derives new fields such as
@@ -58,5 +58,5 @@ models:
         tests:
           - not_null
           - relationships:
-              to: ref('staging_sobeys_stores')
+              to: ref('stg_sobeys_stores')
               field: unique_store_id

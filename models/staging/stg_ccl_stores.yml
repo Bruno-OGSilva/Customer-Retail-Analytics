@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: staging_ccl_stores
+  - name: stg_ccl_stores
     description: >
       This model extracts and transforms raw store data for CCL from the POS system.
       It sources data from the `pos.raw_ccl_stores` table, renames columns for clarity,
@@ -45,5 +45,5 @@ models:
           - not_null
           - unique
           - relationships:
-              to: ref('staging_ccl_sales')
+              to: ref('stg_ccl_sales')
               field: unique_store_id

@@ -1,7 +1,7 @@
-# Staging Model: staging_metro_sales
+# Staging Model: stg_metro_sales
 
 ## Overview
-The `staging_metro_sales` model is responsible for extracting, cleaning, and transforming raw Metro sales data from the POS system. This model pulls data from the `raw_metro_sales` table within the `pos` schema and applies a series of transformations—including renaming columns, casting data types, parsing dates, and generating a unique store identifier—to ensure the data is standardized and ready for further downstream processing and analysis.
+The `stg_metro_sales` model is responsible for extracting, cleaning, and transforming raw Metro sales data from the POS system. This model pulls data from the `raw_metro_sales` table within the `pos` schema and applies a series of transformations—including renaming columns, casting data types, parsing dates, and generating a unique store identifier—to ensure the data is standardized and ready for further downstream processing and analysis.
 
 ## Source Data
 - **Source Table:** `pos.raw_metro_sales`
@@ -55,4 +55,4 @@ The `staging_metro_sales` model is responsible for extracting, cleaning, and tra
   - **Uniqueness Test:** Validate that the `unique_store_id` is unique across the dataset.
 
 ## Conclusion
-The `staging_metro_sales` model transforms raw Metro sales data into a clean and structured format, ensuring consistency and reliability for downstream analysis. With proper renaming, data type casting, date parsing, and the generation of a store unique identifier, this model forms a robust foundation for subsequent reporting and business intelligence efforts.
+The `stg_metro_sales` model transforms raw Metro sales data into a clean and structured format, ensuring consistency and reliability for downstream analysis. With proper renaming, data type casting, date parsing, and the generation of a store unique identifier, this model forms a robust foundation for subsequent reporting and business intelligence efforts.

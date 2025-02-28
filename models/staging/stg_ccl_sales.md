@@ -1,7 +1,7 @@
-# Staging Model: staging_ccl_sales
+# Staging Model: stg_ccl_sales
 
 ## Overview
-The `staging_ccl_sales` model is responsible for extracting, cleaning, and transforming raw CCL sales data from the POS system. The data is sourced from the `raw_ccl_sales` table in the `pos` schema. This model renames columns, casts data types, and derives key identifiers to ensure the data is ready for downstream processing and analytics.
+The `stg_ccl_sales` model is responsible for extracting, cleaning, and transforming raw CCL sales data from the POS system. The data is sourced from the `raw_ccl_sales` table in the `pos` schema. This model renames columns, casts data types, and derives key identifiers to ensure the data is ready for downstream processing and analytics.
 
 ## Source Data
 - **Source Table:** `pos.raw_ccl_sales`
@@ -62,4 +62,4 @@ The `staging_ccl_sales` model is responsible for extracting, cleaning, and trans
   - **Uniqueness Test:** Validate that the `unique_store_id` is unique across the dataset.
 
 ## Conclusion
-The `staging_ccl_sales` model plays a crucial role in the data pipeline by transforming raw sales data into a standardized format. This model ensures that the data is clean, correctly typed, and uniquely identified, providing a solid foundation for further analytical processing and business intelligence activities.
+The `stg_ccl_sales` model plays a crucial role in the data pipeline by transforming raw sales data into a standardized format. This model ensures that the data is clean, correctly typed, and uniquely identified, providing a solid foundation for further analytical processing and business intelligence activities.

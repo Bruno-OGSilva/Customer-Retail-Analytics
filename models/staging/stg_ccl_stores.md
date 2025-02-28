@@ -1,7 +1,7 @@
-# Staging Model: staging_ccl_stores
+# Staging Model: stg_ccl_stores
 
 ## Overview
-The `staging_ccl_stores` model is designed to extract, transform, and standardize raw store data for CCL from the POS system. Data is sourced from the `raw_ccl_stores` table in the `pos` schema. This model renames key columns, assigns a hard-coded province value, and derives a unique store identifier to support reliable joins and downstream analysis.
+The `stg_ccl_stores` model is designed to extract, transform, and standardize raw store data for CCL from the POS system. Data is sourced from the `raw_ccl_stores` table in the `pos` schema. This model renames key columns, assigns a hard-coded province value, and derives a unique store identifier to support reliable joins and downstream analysis.
 
 ## Source Data
 - **Source Table:** `pos.raw_ccl_stores`
@@ -45,4 +45,4 @@ The `staging_ccl_stores` model is designed to extract, transform, and standardiz
   - **Consistency Check:** Confirm that the hardcoded `province` field consistently holds the value `'AB'`.
 
 ## Conclusion
-The `staging_ccl_stores` model lays the groundwork for reliable downstream processing by standardizing raw store data from CCL. With clear naming conventions, proper field derivation, and consistent tagging, this model ensures that the data is clean, unique, and ready for further transformation and analysis.
+The `stg_ccl_stores` model lays the groundwork for reliable downstream processing by standardizing raw store data from CCL. With clear naming conventions, proper field derivation, and consistent tagging, this model ensures that the data is clean, unique, and ready for further transformation and analysis.

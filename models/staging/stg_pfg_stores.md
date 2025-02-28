@@ -1,7 +1,7 @@
-# Staging Model: staging_pfg_stores
+# Staging Model: stg_pfg_stores
 
 ## Overview
-The `staging_pfg_stores` model is designed to extract and transform raw PFG store data from the POS system. It sources data from the `raw_pfg_stores` table within the `pos` schema, applies column renaming, standardizes province values via a CASE statement, and creates a unique store identifier. This results in a clean, consistent dataset that is ready for downstream processing and analysis.
+The `stg_pfg_stores` model is designed to extract and transform raw PFG store data from the POS system. It sources data from the `raw_pfg_stores` table within the `pos` schema, applies column renaming, standardizes province values via a CASE statement, and creates a unique store identifier. This results in a clean, consistent dataset that is ready for downstream processing and analysis.
 
 ## Source Data
 - **Source Table:** `pos.raw_pfg_stores`
@@ -64,4 +64,4 @@ The resulting value is stored in a new column named `province`.
   - **Transformation Accuracy:** Confirm that the CASE statement correctly converts full province names into their corresponding two-letter abbreviations.
 
 ## Conclusion
-The `staging_pfg_stores` model effectively cleans and standardizes raw store data from the POS system. By applying necessary renaming, transforming province values, and generating a unique store identifier, this model lays a solid foundation for further data processing and analysis, ensuring reliable downstream reporting and business insights.
+The `stg_pfg_stores` model effectively cleans and standardizes raw store data from the POS system. By applying necessary renaming, transforming province values, and generating a unique store identifier, this model lays a solid foundation for further data processing and analysis, ensuring reliable downstream reporting and business insights.
