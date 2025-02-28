@@ -32,3 +32,5 @@ sources:
         description: Metro dollar and unit sales by week-store-upc
       - name: raw_metro_stores
         description: Metro store dimension table
+      - name: raw_fcl_sales
+        description: Federated Coop dollar and unit sales by week-store-up-promotype
