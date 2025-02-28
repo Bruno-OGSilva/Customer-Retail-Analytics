@@ -28,3 +28,7 @@ sources:
         description: Loblaw dollar and unit sales by week-store-upc
       - name: raw_lcl_stores
         description: Loblaw store dimension table
+      - name: raw_metro_sales
+        description: Metro dollar and unit sales by week-store-upc
+      - name: raw_metro_stores
+        description: Metro store dimension table
