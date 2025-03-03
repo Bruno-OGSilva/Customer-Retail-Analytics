@@ -76,6 +76,9 @@ def load_csv_files(directory: str) -> pd.DataFrame:
         # Remove any repeated headers appearing within the data
         df = df[df["Geography"] != "Geography"]
 
+        # Remove any repeated headers appearing within the data
+        df = df[df["Geography"] != "Unit Sales All Sales"]
+
         df_list.append(df)
 
     unified_df = pd.concat(df_list, ignore_index=True)
