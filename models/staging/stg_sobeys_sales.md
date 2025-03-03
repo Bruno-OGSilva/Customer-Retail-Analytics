@@ -6,18 +6,16 @@ The `stg_sobeys_sales` model is responsible for extracting and transforming raw 
 ## Source Data
 - **Source Table:** `source`
 - **Original Columns:**
-  - `Geography` (store location)
+  - `store_id`
   - `Product`
   - `UPC No`
   - `Dollar Sales All Sales`
   - `Unit Sales All Sales`
   - `Time`
-  - `store_id`
   - `retail_group`
 
 ## Transformations Applied
 ### Renaming Fields
-- **Geography → store_name:** Enhances clarity by representing the store location.
 - **UPC No → upc_no:** Retains the original UPC data.
 - **Product:** Remains unchanged.
 - **Dollar Sales All Sales → dollar_sales:** Represents the monetary sales value.

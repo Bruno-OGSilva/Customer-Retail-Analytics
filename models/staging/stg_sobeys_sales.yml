@@ -15,8 +15,8 @@ models:
       language: sql  # Language used to define the model
       relation: bigquery.raw.sobeys_sales
     columns:
-      - name: store_name
-        description: "Derived from the Geography column; represents the store's name and id."
+      - name: store_id
+        description: "Unique identifier for the store as provided in the source data."
         tests:
           - not_null
       - name: product
@@ -41,10 +41,6 @@ models:
           - not_null
       - name: week_end_date
         description: "The date marking the end of the sales week, converted from the raw Time column."
-        tests:
-          - not_null
-      - name: store_id
-        description: "Unique identifier for the store as provided in the source data."
         tests:
           - not_null
       - name: retail_group
