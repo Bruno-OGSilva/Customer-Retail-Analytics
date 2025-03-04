@@ -34,3 +34,5 @@ sources:
         description: Metro store dimension table
       - name: raw_fcl_sales
         description: Federated Coop dollar and unit sales by week-store-up-promotype
+      - name: raw_discount_banners
+        description: Contains the dicount banners
