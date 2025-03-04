@@ -57,6 +57,9 @@ models:
         description: "Composite unique identifier created by concatenating retail_group and store_id with a pipe (`|`) separator."
         tests:
           - not_null
+          - relationships:
+              to: ref('stores')
+              field: unique_store_id
       - name: pod
         description: "Extended unique identifier combining retail_group, store_id, and UPC (upc_no) using a pipe (`|`) separator."
         tests:

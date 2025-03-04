@@ -22,7 +22,7 @@ metro_sales as (
     select * from {{ ref('stg_metro_sales') }}
 ),
 
-final as (
+sales as (
     select * from lcl_sales
     union all
     select * from fcl_sales
@@ -36,4 +36,4 @@ final as (
     select * from metro_sales
 )
 
-select * from final
+select * from sales
