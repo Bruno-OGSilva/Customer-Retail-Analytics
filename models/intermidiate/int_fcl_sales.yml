@@ -6,6 +6,14 @@ models:
       This model refines raw FCL sales data from the staging layer (`stg_fcl_sales`) by excluding the `promo_type` column,
       which is not common to other retail accounts. The resulting dataset includes only the common fields needed for
       downstream aggregation in the Mart layer.
+    config:
+      tags: ['fSales'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: view  # Model type (table or view)
+      data_source: POS Federated Coop   # Model package
+      language: sql  # Language used to define the model
+      relation: bigquery.stg_fcl_sales
     columns:
       - name: store_id
         description: "Unique store identifier derived from the source `Store Number`."

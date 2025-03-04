@@ -13,6 +13,13 @@ models:
         - stg_metro_sales
       The unioned dataset provides a consistent schema with common fields such as store_id, product,
       upc_no, upc_int, dollar_sales, unit_sales, week_end_date, retail_group, unique_store_id, and pod.
+    config:
+      tags: ['fSales'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: table  # Model type (table or view)
+      data_source: POS Sales from multiple retail groups   # Model package
+      language: sql  # Language used to define the model
     columns:
       - name: store_id
         description: "Unique store identifier for each record."

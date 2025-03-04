@@ -28,7 +28,7 @@ models:
         tests:
           - not_null
       - name: banner
-        description: "Store banner information, sourced from the `Store Banner` column."
+        description: "The store banner, extracted from `Store Banner`, with standardization applied."
         tests:
           - not_null
       - name: province

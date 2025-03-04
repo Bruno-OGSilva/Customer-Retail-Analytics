@@ -7,6 +7,14 @@ models:
       renaming columns, casting data types, and generating unique identifiers. It deliberately excludes
       the promotional sales columns (`promo_dollar_sales` and `promo_unit_sales`) to maintain a consistent
       schema for later appending with other retail accounts in the Mart layer.
+    config:
+      tags: ['fSales'] # Using the tag to differenciate the fact from the dimension tables
+    meta:  # Additional metadata
+      owner: Bruno Silva  # Model owner
+      type: view  # Model type (table or view)
+      data_source: POS Loblaw   # Model package
+      language: sql  # Language used to define the model
+      relation: bigquery.stg_lcl_sales
     columns:
       - name: store_id
         description: "Store identifier derived from the `Site Number` column."
