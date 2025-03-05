@@ -33,7 +33,12 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 
 seeds:
-  +schema: raw
+  'softdrink_grocery':
+    +schema: raw
+    raw_product_mf:
+      +column_types:
+        upc: STRING
+
 
 models:
   softdrink_grocery:

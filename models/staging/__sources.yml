@@ -36,3 +36,5 @@ sources:
         description: Federated Coop dollar and unit sales by week-store-up-promotype
       - name: raw_discount_banners
         description: Contains the dicount banners
+      - name: raw_product_mf
+        description: Product master file

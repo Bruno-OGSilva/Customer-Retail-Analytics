@@ -33,6 +33,9 @@ models:
         description: "Original UPC number as provided in the source data."
         tests:
           - not_null
+          - relationships:
+              to: ref('product')
+              field: upc
       - name: upc_int
         description: "UPC number cast as an integer to support numerical operations."
         tests:
