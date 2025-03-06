@@ -56,3 +56,5 @@ models:
           - not_null
       - name: w_no
         description: "The business-specific week number integrated from the raw_wno table."
+      - name: week_index
+        description: "The business-specific week index integrated from the raw week number table."
