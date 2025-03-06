@@ -13,6 +13,7 @@ models:
         description: "The calendar date generated from the date spine."
         tests:
           - not_null
+          - unique
       - name: year
         description: "The year extracted from the date."
         tests:
