@@ -49,6 +49,8 @@ This documentation provides an overview of the key models and transformations in
     Unions store data from all intermediate store models to create a unified view of all stores.
   - **product:**
     Provides a clean, unified view of product data as transformed in the staging layer.
+  - **product_missing:**
+    Identifies new product items that have recorded sales but are missing from the product table, serving as a trigger for manual updates to the product dimension.
   - **calendar:**
     Constructs a comprehensive date dimension spanning six years (from January 1, 2020). This model generates a date spine, extracts date attributes (year, month, day, weekday, quarter), calculates week boundaries based on business logic, and joins with raw week number data to integrate business-specific week numbers and indices.
 
@@ -74,6 +76,7 @@ This documentation provides an overview of the key models and transformations in
 This overview summarizes the structure and key transformations of the Customer Retail Analytics dbt project. Each model, from raw ingestion to the final mart layer, is designed to incrementally transform and enrich the data, ensuring that downstream reports and analyses are built on clean, consistent, and business-aligned datasets.
 
 For detailed documentation on each model, please refer to the individual `.md` files generated for every model.
+
 
 
 {% enddocs %}
