@@ -1,0 +1,59 @@
+name: Deploy dbt docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # Adjust this if using a different branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.8
+
+    - name: Install dbt
+      run: pip install dbt-core dbt-bigquery
+
+    - name: Decode and save keyfile
+      run: |
+        mkdir -p ~/.dbt
+        echo "${{ secrets.DBT_KEYFILE }}" | base64 --decode > ~/.dbt/keyfile.json
+
+    - name: Set up dbt profile
+      run: |
+        cat <<EOF > ~/.dbt/profiles.yml
+        softdrink_grocery:
+          target: dev
+          outputs:
+            dev:
+              type: bigquery
+              method: "${{ secrets.DBT_METHOD }}"
+              project: "${{ secrets.DBT_PROJECT }}"
+              dataset: "${{ secrets.DBT_DATASET }}"
+              keyfile: ~/.dbt/keyfile.json
+              threads: "${{ secrets.DBT_THREADS }}"
+              timeout_seconds: "${{ secrets.DBT_JOB_TIMEOUT }}"
+              location: "${{ secrets.DBT_LOCATION }}"
+              priority: "${{ secrets.DBT_PRIORITY }}"
+              retries: "${{ secrets.DBT_JOB_RETRIES }}"
+        EOF
+
+    - name: Generate dbt Docs
+      run: |
+        dbt deps
+        dbt run  # Optional, to refresh data before generating docs
+        dbt docs generate
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_PAT }}
+        publish_dir: ./target  # dbt docs are stored here
+        publish_branch: gh-pages  # This will be the branch serving GitHub Pages
