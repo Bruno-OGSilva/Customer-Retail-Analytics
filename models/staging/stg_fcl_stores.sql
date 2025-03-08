@@ -11,7 +11,7 @@ renamend as (
         `Store Name` as store_name,
         `Store Number` as store_id,
         'Federated Coop' as banner,
-        province,
+        Province as province,
         retail_group,
         CONCAT(retail_group, '|', `Store Number`) as unique_store_id
     from

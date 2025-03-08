@@ -18,9 +18,7 @@ ccl_stores_channel as (
         retail_group,
         unique_store_id,
         case
-            when
-                banner in (select discount_banner from discount_banners)
-                then 'Discount'
+            when banner in (select discount_banner from discount_banners) then 'Discount'
             else 'Conventional'
         end as channel
     from ccl_stores
