@@ -8,7 +8,7 @@ source as (
 
 renamend as (
     select
-        Geography as store_name,
+        geography as store_name,
         `Store No` as store_id,
         `Division Name` as division,
         `Format Name` as format,

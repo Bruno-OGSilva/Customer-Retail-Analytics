@@ -9,6 +9,8 @@ readme = "README.md"
 python = "3.12.4"
 dbt-core = "^1.9.2"
 dbt-bigquery = "^1.9.1"
+sqlfluff = "^3.3.1"
+sqlfluff-templater-dbt = "^3.3.1"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -10,14 +10,14 @@ renamend as (
     select
         product,
         upc,
-        CAST(upc as int) as upc_int,
         vendor,
         brand,
         category,
         subcategory,
         item_size,
         item_unit,
-        pack_qty
+        pack_qty,
+        CAST(upc as int) as upc_int
     from
         source
 

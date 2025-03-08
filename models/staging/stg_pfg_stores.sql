@@ -12,6 +12,7 @@ renamend as (
         `Store Number` as store_id,
         `Banner Name` as banner,
         `Province Name`,
+        retail_group,
         case
             when `Province Name` = 'ALBERTA' then 'AB'
             when `Province Name` = 'BRITISH COLUMBIA' then 'BC'
@@ -26,8 +27,7 @@ renamend as (
             when `Province Name` = 'QUEBEC' then 'QC'
             when `Province Name` = 'SASKATCHEWAN' then 'SK'
             when `Province Name` = 'YUKON' then 'YT'
-        END as province,
-        retail_group,
+        end as province,
         CONCAT(retail_group, '|', `Store Number`) as unique_store_id
     from
         source

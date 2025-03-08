@@ -9,13 +9,13 @@ source as (
 renamend as (
     select
         store_id,
-        Product as product,
+        product,
         `UPC No` as upc_no,
-        CAST(`UPC No` as int) as upc_int,
-        CAST(`Dollar Sales All Sales` AS float64) as dollar_sales,
-        CAST(`Unit Sales All Sales` AS int64) as unit_sales,
-        CAST(`Time` AS DATE) as week_end_date,
         retail_group,
+        CAST(`UPC No` as int) as upc_int,
+        CAST(`Dollar Sales All Sales` as float64) as dollar_sales,
+        CAST(`Unit Sales All Sales` as int64) as unit_sales,
+        CAST(`Time` as date) as week_end_date,
         CONCAT(retail_group, '|', store_id) as unique_store_id,
         CONCAT(retail_group, '|', store_id, '|', `UPC No`) as pod
     from

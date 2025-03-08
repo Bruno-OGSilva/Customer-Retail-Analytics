@@ -8,7 +8,7 @@ source as (
 
 renamend as (
     select
-        Geography as store_name,
+        geography as store_name,
         `Store Number` as store_id,
         `Division Name` as banner,
         'AB' as province,

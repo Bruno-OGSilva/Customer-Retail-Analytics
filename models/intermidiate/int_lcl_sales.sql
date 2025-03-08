@@ -7,17 +7,17 @@ lcl_sales as (
 ),
 
 lcl_no_promo as (
-        select
-            store_id,
-            product,
-            upc_no,
-            upc_int,
-            dollar_sales,
-            unit_sales,
-            week_end_date,
-            retail_group,
-            unique_store_id,
-            pod
+    select
+        store_id,
+        product,
+        upc_no,
+        upc_int,
+        dollar_sales,
+        unit_sales,
+        week_end_date,
+        retail_group,
+        unique_store_id,
+        pod
     from lcl_sales
 )
 
