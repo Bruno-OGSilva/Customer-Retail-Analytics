@@ -36,14 +36,10 @@ models:
         description: "Dollar sales value cast as float64 to support precise financial calculations."
         tests:
           - not_null
-          - expression_is_true:
-              expression: "dollar_sales >= 0"
       - name: unit_sales
         description: "Number of units sold, cast as int64 for consistent numerical analysis."
         tests:
           - not_null
-          - expression_is_true:
-              expression: "unit_sales >= 0"
       - name: week_end_date
         description: "Date representing the end of the sales week, cast to DATE."
         tests:

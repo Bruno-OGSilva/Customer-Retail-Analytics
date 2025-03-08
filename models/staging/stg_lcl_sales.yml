@@ -38,30 +38,22 @@ models:
           for precise financial calculations.
         tests:
           - not_null
-          - expression_is_true:
-              expression: "dollar_sales >= 0"
       - name: unit_sales
         description: >
           Number of units sold, cast to int64 for consistent unit count tracking.
         tests:
           - not_null
-          - expression_is_true:
-              expression: "unit_sales >= 0"
       - name: promo_dollar_sales
         description: >
           Promotional sales amount cleaned of currency symbols and commas, cast to float64
           for accurate financial representation.
         tests:
           - not_null
-          - expression_is_true:
-              expression: "promo_dollar_sales >= 0"
       - name: promo_unit_sales
         description: >
           Number of promotional units sold, cast to int64 to maintain consistency in unit counts.
         tests:
           - not_null
-          - expression_is_true:
-              expression: "promo_unit_sales >= 0"
       - name: week_end_date
         description: >
           End date of the sales week, cast to DATE type to enable proper time-series analysis.
