@@ -7,7 +7,7 @@ This documentation provides an overview of the key models and transformations in
 
 ## Project Architecture
 
-![image](./assets/Project_Architecture.png)
+![image](target/assets/Project_Architecture.png)
 
 ---
 
