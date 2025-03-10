@@ -21,18 +21,6 @@ jobs:
     - name: Install dbt
       run: pip install dbt-core dbt-bigquery
 
-    - name: Export Environment Variables
-      run: |
-        echo "DBT_METHOD=${{ secrets.DBT_METHOD }}" >> $GITHUB_ENV
-        echo "DBT_PROJECT=${{ secrets.DBT_PROJECT }}" >> $GITHUB_ENV
-        echo "DBT_DATASET=${{ secrets.DBT_DATASET }}" >> $GITHUB_ENV
-        echo "DBT_THREADS=${{ secrets.DBT_THREADS }}" >> $GITHUB_ENV
-        echo "DBT_JOB_TIMEOUT=${{ secrets.DBT_JOB_TIMEOUT }}" >> $GITHUB_ENV
-        echo "DBT_LOCATION=${{ secrets.DBT_LOCATION }}" >> $GITHUB_ENV
-        echo "DBT_PRIORITY=${{ secrets.DBT_PRIORITY }}" >> $GITHUB_ENV
-        echo "DBT_JOB_RETRIES=${{ secrets.DBT_JOB_RETRIES }}" >> $GITHUB_ENV
-        echo "DBT_KEYFILE_PATH=${{ secrets.DBT_KEYFILE_PATH }}" >> $GITHUB_ENV
-
     - name: Set up dbt profile
       run: |
         mkdir -p ~/.dbt
