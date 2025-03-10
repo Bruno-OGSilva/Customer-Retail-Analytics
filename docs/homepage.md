@@ -4,11 +4,6 @@
 
 This documentation provides an overview of the key models and transformations in the Customer Retail Analytics project. The project is organized into multiple layers, each serving a specific purpose in the data transformation pipeline. This overview page outlines the raw, staging, intermediate, and mart layers, along with a brief description of each model.
 
-
-## Project Architecture
-
-![image](target/assets/Project_Architecture.png)
-
 ---
 
 ## Project Layers
