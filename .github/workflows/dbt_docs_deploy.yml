@@ -19,7 +19,7 @@ jobs:
         python-version: 3.8
 
     - name: Install dbt
-      run: pip install dbt-postgres
+      run: pip install dbt-core dbt-bigquery
 
     - name: Export Environment Variables
       run: |
@@ -31,13 +31,13 @@ jobs:
         echo "DBT_LOCATION=${{ secrets.DBT_LOCATION }}" >> $GITHUB_ENV
         echo "DBT_PRIORITY=${{ secrets.DBT_PRIORITY }}" >> $GITHUB_ENV
         echo "DBT_JOB_RETRIES=${{ secrets.DBT_JOB_RETRIES }}" >> $GITHUB_ENV
-        echo "DBT_KEYFILE_PATH=${{ secrets.DDBT_KEYFILE_PATH }}" >> $GITHUB_ENV
+        echo "DBT_KEYFILE_PATH=${{ secrets.DBT_KEYFILE_PATH }}" >> $GITHUB_ENV
 
     - name: Set up dbt profile
       run: |
         mkdir -p ~/.dbt
         echo "
-        customer-retail-analytics:
+        softdrink_grocery:
           target: prod
           outputs:
             prod:
