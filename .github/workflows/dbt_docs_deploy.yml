@@ -48,7 +48,7 @@ jobs:
                 type: bigquery
                 project: ${{ secrets.DBT_PROJECT }}
                 dataset: ${{ secrets.DBT_DATASET }}
-                keyfile: ${{ secrets.DBT_KEYFILE_PATH }}
+                 keyfile: ~/.dbt/keyfile.json
                 location: ${{ secrets.DBT_LOCATION }}
                 method: ${{ secrets.DBT_METHOD }}
                 priority: ${{ secrets.DBT_PRIORITY }}
