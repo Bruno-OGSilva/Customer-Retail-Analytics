@@ -1,0 +1,52 @@
+name: Deploy dbt docs to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: 3.8
+
+    - name: Install dbt
+      run: pip install dbt-postgres
+
+    - name: Set up dbt profile
+      run: |
+        mkdir -p ~/.dbt
+        echo "
+        customer-retail-analytics:
+          target: prod
+          outputs:
+            prod:
+                type: bigquery
+                project: ${{ secrets.DBT_PROJECT }}
+                dataset: ${{ secrets.DBT_DATASET }}
+                keyfile: ${{ secrets.DBT_KEYFILE_PATH }}
+                location: ${{ secrets.DBT_LOCATION }}
+                method: ${{ secrets.DBT_METHOD }}
+                priority: ${{ secrets.DBT_PRIORITY }}
+                threads: ${{ secrets.DB_THREADS }}
+                timeout: ${{ secrets.DBT_JOB_TIMEOUT }}
+                retries: ${{ secrets.DBT_JOB_RETRIES }}
+        " > ~/.dbt/profiles.yml
+
+    - name: Install dependencies and generate docs
+      run: |
+        dbt docs generate
+
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_PAT }}
+        publish_dir: ./target
