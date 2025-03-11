@@ -67,7 +67,7 @@ cd customer-retail-analytics
 3. Download your **service account JSON key** and set the environment variable:
 ```sh
 export GOOGLE_APPLICATION_CREDENTIALS="/path/to/your-key.json"
-
+```
 ---
 
  ### **3️ Start Poetry**
@@ -75,7 +75,7 @@ Then launch Poetry and install the dependencies:
 ```sh
 poetry init
 poetry install
-
+```
 ### **4 Install Additional Dependencies
 
 Add dbt Core, dbt-bigquery, pre-commit, and sqlfluff to your Poetry environment:
@@ -83,7 +83,7 @@ Add dbt Core, dbt-bigquery, pre-commit, and sqlfluff to your Poetry environment:
 ```sh
 poetry add dbt-core dbt-bigquery
 poetry add --dev pre-commit
-
+```
 ### **5 Setting Up the Project with Pre-commit
 In this project, we will use **pre-commit** to ensure that our SQL code and configuration conform to best practices before each commit.
 
@@ -114,7 +114,7 @@ Then install the pre-commit hooks:
 
 ```sh
 pre-commit install
-
+```
 ---
 
 ### **7 Upload Historical POS Data to BigQuery**
@@ -122,7 +122,7 @@ Run the data ingestion scripts to load raw CSV files into BigQuery:
 ```sh
 python upload_sales_data.py
 python upload_store_data.py
-
+```
 ---
 
 ### **8 Set Up & Run DBT Transformations**
@@ -131,11 +131,12 @@ python upload_store_data.py
 ```sh
 cd dbt_project
 dbt run
-
+```
 ### **Run DBT Tests**
 To validate the transformations and ensure data integrity, run the following command:
 ```sh
 dbt test
+```
 ---
 ## **9 Connect Power BI to BigQuery**
 
