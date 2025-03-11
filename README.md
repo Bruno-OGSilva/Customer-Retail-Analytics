@@ -108,7 +108,7 @@ args: [--fix, --exit-non-zero-on-fix]
 - id: ruff-format
 - repo: https://github.com/sqlfluff/sqlfluff
 rev: 0.11.2
-
+```
 
 Then install the pre-commit hooks:
 
