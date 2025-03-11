@@ -1,6 +1,6 @@
 # **Customer Retail Analytics – ELT Pipeline for Retail POS Data**
 
-[image]!(assets/Project_Architecture.png)
+![Project Architecture](/assets/Project_Architecture.png)
 
 🚀 **A scalable data pipeline that automates POS data ingestion, transformation, and reporting for category management and retail analytics.**
 
